@@ -20,12 +20,12 @@ a { color: #0b66a0; }
 .navlinks a { text-decoration: none; color: #eaf8ff; font-weight: 750; padding: 8px 12px; border-radius: 999px; }
 .navlinks a:hover, .navlinks a.active { background: rgba(126,242,255,.16); color: #ffffff; }
 .lang { background: linear-gradient(135deg, #7df3ff, #e5b84b) !important; color: #071629 !important; }
-.hero { position: relative; overflow: hidden; background: transparent; color: white; padding: 110px 24px 92px; min-height: calc(100vh - 70px); display: flex; align-items: center; }
+.hero { position: relative; overflow: hidden; background: transparent; color: white; padding: 46px 24px 54px; min-height: calc(100vh - 70px); display: flex; align-items: flex-start; }
 .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size: 42px 42px; mask-image: radial-gradient(circle at 70% 30%, black, transparent 72%); z-index: 0; }
 .hero > * { position: relative; }
 .hero-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 2fr) minmax(330px, 1fr); gap: 28px; align-items: stretch; }
 .kicker { color: #cfe8ff; text-transform: uppercase; letter-spacing: .12em; font-size: .82rem; font-weight: 800; }
-h1 { font-size: clamp(2.35rem, 5vw, 4.55rem); line-height: 1.05; margin: 12px 0; }
+h1 { font-size: clamp(2.35rem, 5vw, 4.55rem); line-height: 1.05; margin: 8px 0; }
 .lead { font-size: 1.22rem; color: #e7f3ff; max-width: 790px; }
 .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .button { display: inline-block; padding: 11px 18px; border-radius: 999px; text-decoration: none; font-weight: 800; background: var(--gold); color: #111; }
@@ -75,19 +75,19 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 
 .site-bg-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 1; background: radial-gradient(circle at 72% 18%, rgba(121,242,255,.18), transparent 28%), radial-gradient(circle at 18% 72%, rgba(229,184,75,.14), transparent 30%), #06111f; }
 .hero-title-cn { font-size: clamp(2.55rem, 5.1vw, 5.15rem); letter-spacing: .02em; white-space: nowrap; }
-.hero-slogan { font-size: clamp(1.02rem, 1.55vw, 1.34rem); font-weight: 850; color: #dff8ff; margin: 18px 0 22px; line-height: 1.35; white-space: nowrap; }
-.hero-panel { background: rgba(5,14,27,.46); border: 1px solid rgba(126,242,255,.24); border-radius: 30px; padding: 30px; box-shadow: 0 25px 80px rgba(0,0,0,.28); backdrop-filter: blur(12px); height: 100%; display: flex; flex-direction: column; justify-content: center; }
-.hero-actions { margin-top: 34px; }
-.hero .lead { color: #eefcff; font-size: 1.18rem; }
+.hero-slogan { font-size: clamp(1.02rem, 1.55vw, 1.34rem); font-weight: 850; color: #dff8ff; margin: 12px 0 16px; line-height: 1.35; white-space: nowrap; }
+.hero-panel { background: rgba(5,14,27,.46); border: 1px solid rgba(126,242,255,.24); border-radius: 30px; padding: 24px 28px; box-shadow: 0 25px 80px rgba(0,0,0,.28); backdrop-filter: blur(12px); height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.hero-actions { margin-top: 22px; }
+.hero .lead { color: #eefcff; font-size: 1.08rem; margin: 10px 0; }
 
-.news-panel { background: rgba(5,14,27,.56); border: 1px solid rgba(126,242,255,.26); border-radius: 30px; padding: 26px; box-shadow: 0 25px 80px rgba(0,0,0,.28); backdrop-filter: blur(14px); color: #effcff; min-height: 100%; overflow: hidden; align-self: stretch; }
+.news-panel { background: rgba(5,14,27,.56); border: 1px solid rgba(126,242,255,.26); border-radius: 30px; padding: 22px; box-shadow: 0 25px 80px rgba(0,0,0,.28); backdrop-filter: blur(14px); color: #effcff; min-height: 100%; overflow: hidden; align-self: stretch; }
 .news-panel h2 { color: #ffffff; margin-bottom: 18px; }
 .news-tabs { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
 .news-tab { border: 1px solid rgba(126,242,255,.28); background: rgba(126,242,255,.11); color: #dff8ff; border-radius: 999px; padding: 7px 12px; font-weight: 850; font-size: .92rem; }
 .news-scroll { max-height: 390px; overflow: hidden; position: relative; }
 .news-list { display: flex; flex-direction: column; gap: 14px; animation: news-roll 18s linear infinite; }
 .news-scroll:hover .news-list { animation-play-state: paused; }
-.news-item { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 15px 16px; }
+.news-item { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 13px 15px; }
 .news-date { color: #ffd66b; font-weight: 900; font-size: .92rem; }
 .news-title { color: #ffffff; font-weight: 900; margin: 4px 0; }
 .news-text { color: #cfefff; font-size: .96rem; }
