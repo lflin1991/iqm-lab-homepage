@@ -67,3 +67,8 @@ footer { text-align: center; color: var(--muted); padding: 34px 20px; }
 
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 18% 18%, rgba(121,242,255,.16), transparent 30%), radial-gradient(circle at 88% 8%, rgba(229,184,75,.13), transparent 24%), radial-gradient(circle at 82% 82%, rgba(64,120,255,.10), transparent 28%); animation: bg-drift 14s ease-in-out infinite alternate; }
 @keyframes bg-drift { from { transform: translate3d(0,0,0) scale(1); opacity: .85; } to { transform: translate3d(-18px, 14px, 0) scale(1.04); opacity: 1; } }
+
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.logo-mark { width: 42px; height: 42px; border-radius: 14px; box-shadow: 0 8px 22px rgba(14,107,168,.22); flex: 0 0 auto; }
+.brand-text { display: inline-block; }
+@media (max-width: 520px) { .logo-mark { width: 36px; height: 36px; } }
