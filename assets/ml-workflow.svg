@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360">
+  <defs><linearGradient id="b" x1="0" x2="1"><stop stop-color="#eaf8ff"/><stop offset="1" stop-color="#fff7df"/></linearGradient><linearGradient id="a" x1="0" x2="1"><stop stop-color="#0e6ba8"/><stop offset="1" stop-color="#e5b84b"/></linearGradient></defs>
+  <rect width="980" height="360" rx="30" fill="url(#b)"/>
+  <g font-family="Inter,Arial" text-anchor="middle">
+    <g transform="translate(145 178)"><circle r="64" fill="#0e3a5b"/><text y="-10" font-size="21" font-weight="800" fill="#fff">DFT</text><text y="20" font-size="15" fill="#dff1ff">electronic data</text></g>
+    <g transform="translate(365 178)"><circle r="64" fill="#0b587f"/><text y="-10" font-size="21" font-weight="800" fill="#fff">Models</text><text y="20" font-size="15" fill="#dff1ff">Hamiltonians</text></g>
+    <g transform="translate(585 178)"><circle r="64" fill="#12839a"/><text y="-10" font-size="21" font-weight="800" fill="#fff">AI/ML</text><text y="20" font-size="15" fill="#dff1ff">patterns</text></g>
+    <g transform="translate(805 178)"><circle r="64" fill="#d89d27"/><text y="-10" font-size="21" font-weight="800" fill="#111">Design</text><text y="20" font-size="15" fill="#332300">new materials</text></g>
+  </g>
+  <g stroke="url(#a)" stroke-width="8" stroke-linecap="round" fill="none"><path d="M215 178h80"/><path d="M435 178h80"/><path d="M655 178h80"/></g>
+</svg>

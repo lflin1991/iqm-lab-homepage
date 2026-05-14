@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500">
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#08172c"/><stop offset="1" stop-color="#113f61"/></linearGradient><filter id="g"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="760" height="500" rx="28" fill="url(#bg)"/>
+  <g stroke="#7df3ff" stroke-width="2" opacity=".72">
+    <path d="M150 110L270 170 390 110 510 170 630 110M150 250l120 60 120-60 120 60 120-60M150 390l120-80 120 80 120-80 120 80M150 110v140m120-80v140m120-200v140m120-80v140m120-200v140" fill="none"/>
+  </g>
+  <g filter="url(#g)">
+    <g fill="#7df3ff"><circle cx="150" cy="110" r="13"/><circle cx="270" cy="170" r="13"/><circle cx="390" cy="110" r="13"/><circle cx="510" cy="170" r="13"/><circle cx="630" cy="110" r="13"/></g>
+    <g fill="#ffd66b"><circle cx="150" cy="250" r="16"/><circle cx="270" cy="310" r="16"/><circle cx="390" cy="250" r="16"/><circle cx="510" cy="310" r="16"/><circle cx="630" cy="250" r="16"/></g>
+    <g fill="#ff7a59"><circle cx="150" cy="390" r="11"/><circle cx="390" cy="390" r="11"/><circle cx="630" cy="390" r="11"/></g>
+  </g>
+  <text x="52" y="58" font-family="Inter,Arial" font-size="28" font-weight="800" fill="#fff">Quantum lattice · correlations · emergent order</text>
+</svg>

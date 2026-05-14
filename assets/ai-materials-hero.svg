@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#071629"/><stop offset=".55" stop-color="#0c3b63"/><stop offset="1" stop-color="#1b8aa5"/></linearGradient>
+    <linearGradient id="g" x1="0" x2="1"><stop stop-color="#79f2ff"/><stop offset="1" stop-color="#ffd66b"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="620" rx="34" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#fff" stroke-width="1">
+    <path d="M90 90h720M90 180h720M90 270h720M90 360h720M90 450h720M180 55v510M300 55v510M420 55v510M540 55v510M660 55v510"/>
+  </g>
+  <g stroke="url(#g)" stroke-width="3" fill="none" filter="url(#glow)">
+    <path d="M120 420C230 250 310 310 420 190s220-80 340 30"/>
+    <path d="M130 470c170-80 280-40 390-145 90-86 170-72 250-12" opacity=".65"/>
+  </g>
+  <g fill="#eafcff" stroke="#79f2ff" stroke-width="3" filter="url(#glow)">
+    <circle cx="210" cy="332" r="18"/><circle cx="326" cy="283" r="15"/><circle cx="450" cy="176" r="20"/><circle cx="610" cy="142" r="16"/><circle cx="746" cy="217" r="19"/>
+  </g>
+  <g transform="translate(115 105)">
+    <rect width="260" height="120" rx="22" fill="#ffffff" opacity=".12" stroke="#ffffff" stroke-opacity=".28"/>
+    <text x="28" y="48" font-family="Inter,Arial" font-size="28" font-weight="800" fill="#fff">AI/ML</text>
+    <text x="28" y="84" font-family="Inter,Arial" font-size="20" fill="#dff8ff">materials discovery</text>
+  </g>
+  <g transform="translate(520 390)">
+    <rect width="255" height="112" rx="22" fill="#ffffff" opacity=".13" stroke="#ffffff" stroke-opacity=".30"/>
+    <text x="26" y="46" font-family="Inter,Arial" font-size="25" font-weight="800" fill="#fff">Quantum Materials</text>
+    <text x="26" y="80" font-family="Inter,Arial" font-size="18" fill="#dff8ff">models · data · design</text>
+  </g>
+</svg>
