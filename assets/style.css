@@ -116,8 +116,13 @@ code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; paddi
 
 .member-profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 310px); gap: 24px; align-items: start; }
 .member-photo { width: 100%; border-radius: 24px; border: 1px solid rgba(126,242,255,.24); box-shadow: 0 18px 45px rgba(6,22,41,.22); object-fit: cover; }
+.member-card-link { display: block; text-decoration: none; color: inherit; }
+.member-summary-card { display: grid; grid-template-columns: minmax(0, 1fr) 124px; gap: 18px; align-items: center; cursor: pointer; }
+.member-summary-card:hover { transform: translateY(-2px); transition: .18s ease; box-shadow: 0 18px 42px rgba(14,58,91,.12); }
+.member-thumb { width: 124px; height: 150px; object-fit: cover; border-radius: 18px; border: 1px solid rgba(126,242,255,.28); box-shadow: 0 12px 28px rgba(6,22,41,.18); }
+.text-link { color: #0b66a0; text-decoration: underline; font-weight: 800; }
 .youtube-card { margin-top: 18px; background: linear-gradient(135deg, #071629, #0e3a5b); color: white; border-color: rgba(126,242,255,.22); }
 .youtube-card h3 { color: white; }
 .youtube-card p { color: #dff4ff; }
 .youtube-card .button { background: #ff0033; color: white; }
-@media (max-width: 760px) { .member-profile { grid-template-columns: 1fr; } .member-photo { max-width: 320px; } }
+@media (max-width: 760px) { .member-profile { grid-template-columns: 1fr; } .member-photo { max-width: 320px; } .member-summary-card { grid-template-columns: 1fr; } .member-thumb { width: 128px; height: 154px; } }
