@@ -114,7 +114,7 @@ code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; paddi
 @media (max-width: 760px) { .pub-card { align-items: flex-start; flex-direction: column; } .pub-actions { justify-content: flex-start; } }
 @media (max-width: 520px) { .pub-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px; } }
 
-.member-profile { display: grid; grid-template-columns: minmax(220px, 310px) minmax(0, 1fr); gap: 24px; align-items: start; }
+.member-profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 310px); gap: 24px; align-items: start; }
 .member-photo { width: 100%; border-radius: 24px; border: 1px solid rgba(126,242,255,.24); box-shadow: 0 18px 45px rgba(6,22,41,.22); object-fit: cover; }
 .youtube-card { margin-top: 18px; background: linear-gradient(135deg, #071629, #0e3a5b); color: white; border-color: rgba(126,242,255,.22); }
 .youtube-card h3 { color: white; }
