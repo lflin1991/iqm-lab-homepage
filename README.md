@@ -11,6 +11,7 @@ Chinese pages:
 - `people.html`
 - `publications.html`
 - `contact.html`
+- `news.html`
 
 English pages:
 - `en/index.html`
@@ -23,3 +24,7 @@ English pages:
 ## Deployment
 
 Push to GitHub, then use GitHub Pages from branch `main`, folder `/root`.
+
+## Publications PDF files
+
+Place local article PDFs in `pdfs/`. The filename must match the `pdf` field in `_data/publications.yml`.
