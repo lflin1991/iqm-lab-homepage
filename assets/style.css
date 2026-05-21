@@ -68,10 +68,10 @@ footer { text-align: center; color: var(--muted); padding: 34px 20px; }
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 18% 18%, rgba(121,242,255,.16), transparent 30%), radial-gradient(circle at 88% 8%, rgba(229,184,75,.13), transparent 24%), radial-gradient(circle at 82% 82%, rgba(64,120,255,.10), transparent 28%); animation: bg-drift 14s ease-in-out infinite alternate; }
 @keyframes bg-drift { from { transform: translate3d(0,0,0) scale(1); opacity: .85; } to { transform: translate3d(-18px, 14px, 0) scale(1.04); opacity: 1; } }
 
-.brand { display: inline-flex; align-items: center; gap: 10px; }
-.logo-mark { width: 42px; height: 42px; border-radius: 14px; box-shadow: 0 8px 22px rgba(14,107,168,.22); flex: 0 0 auto; object-fit: contain; background: rgba(255,255,255,.92); padding: 3px; }
-.brand-text { display: inline-block; }
-@media (max-width: 520px) { .logo-mark { width: 36px; height: 36px; } }
+.brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.logo-mark { width: 238px; height: auto; max-height: 76px; border-radius: 16px; box-shadow: 0 10px 26px rgba(14,107,168,.22); flex: 0 0 auto; object-fit: contain; background: rgba(255,255,255,.94); padding: 5px; }
+@media (max-width: 720px) { .logo-mark { width: 205px; max-height: 66px; } }
+@media (max-width: 520px) { .logo-mark { width: 175px; max-height: 58px; } }
 
 .site-bg-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 1; background: radial-gradient(circle at 72% 18%, rgba(121,242,255,.18), transparent 28%), radial-gradient(circle at 18% 72%, rgba(229,184,75,.14), transparent 30%), #06111f; }
 .hero-title-cn { font-size: clamp(2.55rem, 5.1vw, 5.15rem); letter-spacing: .02em; white-space: nowrap; }
