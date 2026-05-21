@@ -98,15 +98,18 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 @media (max-width: 980px) { .hero-title-cn, .hero-slogan { white-space: normal; } .news-panel { max-height: none; } .news-scroll { max-height: none; } .news-list { animation: none; } }
 .timeline { display: grid; gap: 16px; }
 .timeline-item { background: linear-gradient(180deg, #ffffff, #f4f9fc); border: 1px solid #dceaf3; border-radius: 20px; padding: 20px; }
-.paper-window { border-color: rgba(229,184,75,.65); background: linear-gradient(180deg, #fffaf0, #f4f9fc); }
 .pub-card { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
-.pub-main { flex: 1 1 auto; }
-.pub-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 7px; }
-.pub-number { color: var(--blue); font-weight: 900; }
-.pub-citation { color: #26384a; }
+.pub-main { flex: 1 1 auto; min-width: 0; }
+.pub-row { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 12px; align-items: start; }
+.pub-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: 0; }
+.pub-number { color: var(--blue); font-weight: 950; font-variant-numeric: tabular-nums; white-space: nowrap; line-height: 1.65; text-align: right; }
+.pub-citation { color: #26384a; overflow-wrap: anywhere; }
+.pub-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; align-items: center; min-width: 140px; }
 .featured-pub { border-left: 4px solid var(--gold); padding-left: 18px; }
-.star-badge { font-size: .78rem; padding: 3px 8px; margin: 0; }
-.pub-pdf { white-space: nowrap; }
+.star-badge { font-size: .78rem; padding: 3px 8px; margin: 0 0 5px; }
+.pub-pdf, .light-button { white-space: nowrap; padding: 8px 13px; }
+.light-button { background: #eaf8ff !important; color: #0b3d5f !important; border: 1px solid #cbe8f7; }
 .missing-pdf { color: #8a5a00; background: #fff5d6; border: 1px solid #f3d57a; border-radius: 999px; padding: 8px 12px; font-weight: 850; white-space: nowrap; }
 code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; padding: 1px 6px; }
-@media (max-width: 680px) { .pub-card { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 760px) { .pub-card { align-items: flex-start; flex-direction: column; } .pub-actions { justify-content: flex-start; } }
+@media (max-width: 520px) { .pub-row { grid-template-columns: 46px minmax(0, 1fr); gap: 9px; } }
