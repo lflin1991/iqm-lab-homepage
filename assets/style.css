@@ -69,9 +69,9 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 @keyframes bg-drift { from { transform: translate3d(0,0,0) scale(1); opacity: .85; } to { transform: translate3d(-18px, 14px, 0) scale(1.04); opacity: 1; } }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
-.logo-mark { width: 238px; height: auto; max-height: 76px; border-radius: 16px; box-shadow: 0 10px 26px rgba(14,107,168,.22); flex: 0 0 auto; object-fit: contain; background: rgba(255,255,255,.94); padding: 5px; }
-@media (max-width: 720px) { .logo-mark { width: 205px; max-height: 66px; } }
-@media (max-width: 520px) { .logo-mark { width: 175px; max-height: 58px; } }
+.logo-mark { width: 330px; height: auto; max-height: 96px; border-radius: 0; box-shadow: none; flex: 0 0 auto; object-fit: contain; background: transparent; padding: 0; display: block; }
+@media (max-width: 720px) { .logo-mark { width: 270px; max-height: 82px; } }
+@media (max-width: 520px) { .logo-mark { width: 220px; max-height: 68px; } }
 
 .site-bg-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 1; background: radial-gradient(circle at 72% 18%, rgba(121,242,255,.18), transparent 28%), radial-gradient(circle at 18% 72%, rgba(229,184,75,.14), transparent 30%), #06111f; }
 .hero-title-cn { font-size: clamp(2.55rem, 5.1vw, 5.15rem); letter-spacing: .02em; white-space: nowrap; }
