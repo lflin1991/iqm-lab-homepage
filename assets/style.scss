@@ -1,7 +1,6 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 :root {
   --ink: #102033;
   --muted: #5f7184;
@@ -12,7 +11,7 @@
   --line: #e4edf4;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font-family: Inter, "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color: var(--ink); background: #06111f; line-height: 1.65; }
+body { margin: 0; font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: #06111f; line-height: 1.65; }
 a { color: #0b66a0; }
 .topbar { position: sticky; top: 0; z-index: 10; background: transparent; border-bottom: 1px solid rgba(126,242,255,.18); backdrop-filter: none; }
 .nav { max-width: 1280px; margin: 0 auto; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
