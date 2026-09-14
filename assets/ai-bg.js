@@ -1,6 +1,15 @@
 (function () {
   const canvas = document.getElementById('ai-bg');
   if (!canvas) return;
+  const shouldDisableCanvas = window.matchMedia(
+    '(max-width: 720px), (prefers-reduced-motion: reduce)'
+  ).matches;
+
+  if (shouldDisableCanvas) {
+    canvas.remove();
+    return;
+  }
+
   const ctx = canvas.getContext('2d');
   let w, h, dpr, particles;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

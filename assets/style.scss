@@ -1,3 +1,5 @@
+---
+---
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 :root {
@@ -126,3 +128,9 @@ code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; paddi
 .youtube-card p { color: #dff4ff; }
 .youtube-card .button { background: #ff0033; color: white; }
 @media (max-width: 760px) { .member-profile { grid-template-columns: 1fr; } .member-photo { max-width: 320px; } .member-summary-card { grid-template-columns: 1fr; } .member-thumb { width: 128px; height: 154px; } }
+@media (max-width: 720px), (prefers-reduced-motion: reduce) {
+    .site-bg-canvas,
+    .ai-bg-canvas {
+      display: none;
+    }
+  }

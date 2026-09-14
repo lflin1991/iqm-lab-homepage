@@ -4,3 +4,5 @@ email: lflin@utk.edu
 google_scholar: https://scholar.google.com/citations?user=bvLzblkAAAAJ
 url: "https://iqmlab.org"
 baseurl: ""
+sass:
+    style: compressed
