@@ -2,4 +2,4 @@ name = "iqm-lab-homepage"
 compatibility_date = "2026-09-14"
 
 [assets]
-directory = "./_site"
+directory = "."
