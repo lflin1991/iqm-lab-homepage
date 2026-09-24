@@ -1,0 +1,8 @@
+{% assign news_path = '/news.html' %}{% if page.lang == 'en' %}{% assign news_path = '/en/news.html' %}{% endif %}
+<aside class="news-panel">
+  <h2><a class="panel-title-link" href="{{ news_path | relative_url }}">{{ site.data.i18n.news[page.lang] }}</a></h2>
+  <div class="news-scroll"><div class="news-list">
+    {% for item in site.data.news %}{% if item.homepage %}{% include news-item.html item=item compact=true %}{% endif %}{% endfor %}
+  </div></div>
+  <div class="news-more"><a class="button secondary" href="{{ news_path | relative_url }}">{{ site.data.i18n.all_news[page.lang] }}</a></div>
+</aside>

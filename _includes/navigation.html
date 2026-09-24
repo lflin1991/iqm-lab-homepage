@@ -1,0 +1,12 @@
+{% assign prefix = '/' %}
+{% assign other_prefix = '/en/' %}
+{% if page.lang == 'en' %}{% assign prefix = '/en/' %}{% assign other_prefix = '/' %}{% endif %}
+<div class="topbar"><nav class="nav">
+  <a class="brand" href="{{ prefix | relative_url }}"><img class="logo-mark" src="{{ '/assets/logo-transparent.png' | relative_url }}" alt="{{ site.data.i18n.logo_alt[page.lang] | escape }}"></a>
+  <div class="navlinks">
+    {% for item in site.data.navigation %}
+    <a{% if page.nav_id == item.id %} class="active" aria-current="page"{% endif %} href="{{ prefix | append: item.path | relative_url }}">{{ item.label[page.lang] }}</a>
+    {% endfor %}
+    <a class="lang" href="{{ other_prefix | append: page.translation_path | relative_url }}">{{ site.data.i18n.switch_language[page.lang] }}</a>
+  </div>
+</nav></div>

@@ -1,0 +1,40 @@
+- id: home
+  path: ''
+  label:
+    zh: 主页
+    en: Home
+- id: news
+  path: news
+  label:
+    zh: 新闻动态
+    en: News
+- id: member
+  path: member
+  label:
+    zh: 课题组成员
+    en: Member
+- id: research
+  path: research
+  label:
+    zh: 科研
+    en: Research
+- id: publications
+  path: publications
+  label:
+    zh: 论文
+    en: Publications
+- id: teaching
+  path: teaching
+  label:
+    zh: 教学
+    en: Teaching
+- id: openings
+  path: openings
+  label:
+    zh: 招生信息
+    en: Openings
+- id: contact
+  path: contact
+  label:
+    zh: 联系
+    en: Contact

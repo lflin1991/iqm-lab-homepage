@@ -13,8 +13,9 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: #06111f; line-height: 1.65; }
 a { color: #0b66a0; }
-.topbar { position: sticky; top: 0; z-index: 10; background: transparent; border-bottom: 1px solid rgba(126,242,255,.18); backdrop-filter: none; }
-.nav { max-width: 1280px; margin: 0 auto; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.topbar { position: sticky; top: 0; z-index: 10; isolation: isolate; overflow: hidden; background: #06111f; border-bottom: 1px solid rgba(126,242,255,.18); }
+.topbar-bg-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+.nav { position: relative; max-width: 1280px; margin: 0 auto; padding: 10px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .brand { font-weight: 900; color: #ffffff; text-decoration: none; line-height: 1.15; }
 .brand small { display: block; color: #bcecff; font-weight: 650; font-size: .78rem; }
 .navlinks { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
@@ -40,7 +41,6 @@ h3 { color: var(--blue-2); margin-bottom: 8px; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .grid.two { grid-template-columns: repeat(2, 1fr); }
 .card { background: linear-gradient(180deg, #ffffff, #f4f9fc); border: 1px solid #dceaf3; border-radius: 20px; padding: 20px; box-shadow: 0 10px 28px rgba(14,58,91,.06); }
-.card:hover { transform: translateY(-2px); transition: .18s ease; box-shadow: 0 16px 36px rgba(14,58,91,.10); }
 .card strong { color: var(--blue-2); }
 .pub { padding: 16px 0; border-top: 1px solid #e6edf3; }
 .pub:first-of-type { border-top: 0; }
@@ -66,7 +66,8 @@ footer { text-align: center; color: var(--muted); padding: 34px 20px; }
 .hero .visual { background: rgba(255,255,255,.06); backdrop-filter: blur(8px); }
 .tech-note { border-left: 4px solid #7df3ff; padding-left: 16px; color: #dff8ff; }
 
-body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 18% 18%, rgba(121,242,255,.16), transparent 30%), radial-gradient(circle at 88% 8%, rgba(229,184,75,.13), transparent 24%), radial-gradient(circle at 82% 82%, rgba(64,120,255,.10), transparent 28%); animation: bg-drift 14s ease-in-out infinite alternate; }
+body::before, .topbar::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(circle at 18% 18%, rgba(121,242,255,.16), transparent 30%), radial-gradient(circle at 88% 8%, rgba(229,184,75,.13), transparent 24%), radial-gradient(circle at 82% 82%, rgba(64,120,255,.10), transparent 28%); animation: bg-drift 14s ease-in-out infinite alternate; }
+.topbar::before { position: absolute; width: 100vw; height: 100vh; }
 @keyframes bg-drift { from { transform: translate3d(0,0,0) scale(1); opacity: .85; } to { transform: translate3d(-18px, 14px, 0) scale(1.04); opacity: 1; } }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
@@ -75,6 +76,8 @@ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-i
 @media (max-width: 520px) { .logo-mark { width: 220px; max-height: 68px; } }
 
 .site-bg-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 1; background: radial-gradient(circle at 72% 18%, rgba(121,242,255,.18), transparent 28%), radial-gradient(circle at 18% 72%, rgba(229,184,75,.14), transparent 30%), #06111f; }
+.topbar-bg-canvas { background: radial-gradient(circle at 72% 18%, rgba(121,242,255,.18), transparent 28%), radial-gradient(circle at 18% 72%, rgba(229,184,75,.14), transparent 30%), #06111f; background-size: 100vw 100vh; background-repeat: no-repeat; }
+@media (prefers-reduced-motion: reduce) { body::before, .topbar::before { animation: none; } }
 .hero-title-cn { font-size: clamp(2.55rem, 5.1vw, 5.15rem); letter-spacing: .02em; white-space: nowrap; }
 .hero-slogan { font-size: clamp(1.02rem, 1.55vw, 1.34rem); font-weight: 850; color: #dff8ff; margin: 12px 0 16px; line-height: 1.35; white-space: nowrap; }
 .hero-panel { background: rgba(5,14,27,.46); border: 1px solid rgba(126,242,255,.24); border-radius: 30px; padding: 24px 28px; box-shadow: 0 25px 80px rgba(0,0,0,.28); backdrop-filter: blur(12px); height: 100%; display: flex; flex-direction: column; justify-content: center; }
@@ -118,8 +121,7 @@ code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; paddi
 .member-profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 310px); gap: 24px; align-items: start; }
 .member-photo { width: 100%; border-radius: 24px; border: 1px solid rgba(126,242,255,.24); box-shadow: 0 18px 45px rgba(6,22,41,.22); object-fit: cover; }
 .member-card-link { display: block; text-decoration: none; color: inherit; }
-.member-summary-card { display: grid; grid-template-columns: minmax(0, 1fr) 124px; gap: 18px; align-items: center; cursor: pointer; }
-.member-summary-card:hover { transform: translateY(-2px); transition: .18s ease; box-shadow: 0 18px 42px rgba(14,58,91,.12); }
+.member-summary-card { display: grid; grid-template-columns: minmax(0, 1fr) 124px; gap: 18px; align-items: center; }
 .member-thumb { width: 124px; height: 150px; object-fit: cover; border-radius: 18px; border: 1px solid rgba(126,242,255,.28); box-shadow: 0 12px 28px rgba(6,22,41,.18); }
 .text-link { color: #0b66a0; text-decoration: underline; font-weight: 800; }
 .youtube-card { margin-top: 18px; background: linear-gradient(135deg, #071629, #0e3a5b); color: white; border-color: rgba(126,242,255,.22); }
@@ -127,3 +129,5 @@ code { background: #edf5fb; border: 1px solid #d6e7f2; border-radius: 6px; paddi
 .youtube-card p { color: #dff4ff; }
 .youtube-card .button { background: #ff0033; color: white; }
 @media (max-width: 760px) { .member-profile { grid-template-columns: 1fr; } .member-photo { max-width: 320px; } .member-summary-card { grid-template-columns: 1fr; } .member-thumb { width: 128px; height: 154px; } }
+
+.member-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
