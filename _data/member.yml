@@ -52,3 +52,28 @@
     link_label:
       zh: 邮箱
       en: Email
+- id: huijie-lian
+  name:
+    zh: 连慧婕 / Hui-Jie Lian
+    en: Hui-Jie Lian / 连慧婕
+  role:
+    zh: 博士生
+    en: PhD Student
+  bio:
+    zh: 研究方向：凝聚态理论计算、低维磁性，拓扑，铁电材料
+    en: Research interests include theoretical and computational condensed matter physics, low-dimensional magnetism, topology, and ferroelectric materials.
+  photo: /assets/images/lianhuijie.webp
+  links:
+  - url:
+      zh: mailto:230259170@seu.edu.cn
+      en: mailto:230259170@seu.edu.cn
+    link_label:
+      zh: 邮箱
+      en: Email
+  links:
+  - url:
+      zh: https://jingyanchen730.github.io/jychen-homepage-new/
+      en: https://jingyanchen730.github.io/jychen-homepage-new/
+    link_label:
+      zh: 查看详情
+      en: Website
