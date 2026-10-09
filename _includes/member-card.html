@@ -1,0 +1,21 @@
+{% assign member = include.member %}
+<section>
+    <div class="card member-summary-card">
+      <div>
+        <h3>{{ member.name[page.lang] | escape }}</h3>
+        <p><strong>{{ member.role[page.lang] | escape }}</strong></p>
+        <p>{{ member.bio[page.lang] | escape }}</p>
+        {% if member.links.size > 0 %}
+        <p class="member-links">
+          {% for link in member.links %}
+          {% assign member_url = link.url[page.lang] %}
+          {% assign first_char = member_url | slice: 0 %}
+          {% if first_char == '/' %}{% assign member_url = member_url | relative_url %}{% endif %}
+          <a class="text-link" href="{{ member_url | escape }}">{{ link.link_label[page.lang] | escape }}</a>
+          {% endfor %}
+        </p>
+        {% endif %}
+      </div>
+      {% if member.photo %}<img class="member-thumb" src="{{ member.photo | relative_url }}" alt="{{ member.name[page.lang] | escape }}">{% endif %}
+    </div>
+</section>

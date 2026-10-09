@@ -1,0 +1,151 @@
+# IQM Lab website
+
+A bilingual Jekyll site. Chinese pages live at `/`; English pages at `/en/`.
+Both languages share the layouts and the data files, and every translatable
+value is stored as a `zh:` / `en:` pair in one place. There is no automatic
+translation or cross-language fallback: a missing key renders as blank, not as
+the other language.
+
+## Preview
+
+Run `jekyll serve` from this directory and open http://localhost:4000.
+Run `jekyll build` to generate `_site/`. Never edit `_site/` or `.jekyll-cache/`;
+they are generated output. Restart the server after editing `_config.yml`.
+
+## Where to edit
+
+Both languages of each entry live in one shared data file:
+
+| Content | Where |
+| --- | --- |
+| News, including the homepage panel | `_data/news.yml` |
+| Member cards | `_data/member.yml` |
+| Research cards and methods | `_data/research.yml` |
+| Teaching cards and plans | `_data/teaching.yml` |
+| Recruiting information | `_data/openings.yml` |
+
+Page bodies are still one file per language:
+
+| Content | Chinese | English |
+| --- | --- | --- |
+| Profile prose | `lingfang-lin.md` | `en/lingfang-lin.md` |
+| Contact prose | `contact.md` | `en/contact.md` |
+| Homepage introduction | `index.html` | `en/index.html` |
+
+Publications are shared in `_data/publications.yml`; PDF files live in `pdfs/`.
+Email and Google Scholar URL are shared in `_config.yml`.
+Page titles, descriptions, headings, and introductions are in the YAML front
+matter at the top of each page, so they are still written once per language.
+Member-page recruiting callouts are there too.
+
+In the data files, every translatable value is a two-key map:
+
+```yaml
+title:
+  zh: 中文标题
+  en: English title
+```
+
+Values that do not vary by language — `id`, `homepage`, `photo`, the `methods`
+list — stay plain scalars. Both languages of an item sit next to each other, so
+they are edited in one place and cannot drift apart.
+
+## Add news
+
+Copy an entry into `_data/news.yml`:
+
+```yaml
+- id: new-publication-2026
+  label:
+    zh: 2026 · 论文发表
+    en: 2026 · Publication
+  title:
+    zh: 我们的新论文
+    en: Our new paper
+  body:
+    zh: 含 **粗体** 与 [论文链接](https://example.org) 的正文。
+    en: Details with **bold text** and a [paper link](https://example.org).
+  summary:
+    zh: 可选的首页摘要。
+    en: A short optional homepage summary.
+  homepage: true
+```
+
+Items appear in file order; put the newest first. Use a unique `id` per item.
+`label` is optional and takes precedence over `date`; dates should be quoted and
+stay a plain scalar. `body` and `summary` support Markdown. If `summary` is
+omitted, the homepage uses `body`. Set `homepage: false` to show an entry only on
+the full news page. `SITE_EMAIL` in news text is replaced with the email from
+`_config.yml`.
+
+## Add a member
+
+Copy an entry into `_data/member.yml`:
+
+```yaml
+- id: example-member
+  name:
+    zh: 示例成员
+    en: Example Member
+  role:
+    zh: 博士生
+    en: PhD student
+  bio:
+    zh: 研究方向与简短介绍。
+    en: Research interests and a short introduction.
+  photo: /assets/images/example.webp
+  links:
+  - url:
+      zh: /example-member.html
+      en: /en/example-member.html
+    link_label:
+      zh: 查看详情
+      en: View profile
+  - url: "mailto:example@example.org"
+    link_label:
+      zh: 邮箱
+      en: Email
+```
+
+Upload the image to `assets/images/`. Cards appear in file order. `photo` and
+`links` are optional. Add as many link entries as needed; links appear in list
+order as separate clickable labels. `url` is a `zh:` / `en:` pair whenever the
+target differs by language — a local path such as `/example-member.html` versus
+`/en/example-member.html`. For `mailto:` and external URLs the same value simply
+appears under both keys. `photo` is never translated. Names, roles, and
+biographies are plain text.
+For a longer profile, copy an existing `.md` profile, change its front matter
+(including `permalink` and `translation_path`), and link to it from the member
+entry. Create both language pages when using the shared language switch.
+The member pages are `/member.html` and `/en/member.html`; old People URLs have
+no redirects.
+
+## Structure and layout changes
+
+- `_layouts/default.html`: shared HTML document and background canvas.
+- `_layouts/`: shared page templates for news, member, research, teaching,
+  openings, publications, Markdown pages, and profiles.
+- `_includes/`: shared navigation, head, footer, cards, and news components.
+- `_data/navigation.yml`: navigation order, destinations, and bilingual labels.
+- `_data/i18n.yml`: recurring interface labels and footer text, each written as
+  a `zh:` / `en:` pair and read as `site.data.i18n.<key>[page.lang]`.
+- `assets/style.scss`: appearance; `assets/ai-bg.js`: background animation.
+
+Every page has `lang`, `nav_id`, and `translation_path` in front matter.
+`translation_path` is the filename relative to the language root (empty for
+home); it lets the language switch link to the matching page. `nav_id` matches
+an ID in `_data/navigation.yml` and controls the active menu item.
+
+Use spaces, not tabs, in YAML. Keep field names unchanged when editing text.
+Templates read a data file as `site.data.<file>`, and each translatable field as
+`item.<field>[page.lang]`. YAML rules that bite here:
+
+- Write `zh:` / `en:` pairs in block style (two indented lines) rather than
+  `{zh: …, en: …}` flow style; a comma inside the text breaks flow style.
+- A value containing `: ` is a syntax error. A value containing ` #` is
+  silently truncated at the `#`. Quote such text or use a `>-` block.
+- Trailing spaces are stripped from unquoted values. `apply_text.en` in
+  `_data/openings.yml` keeps its quotes because that trailing space is what
+  separates the sentence from the email link.
+- A missing `en:` or `zh:` key renders blank on that page and does not fail the
+  build, so check both languages after editing.

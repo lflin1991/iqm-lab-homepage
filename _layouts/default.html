@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="{{ site.data.i18n.html_lang[page.lang] }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+<canvas id="ai-bg" class="site-bg-canvas" aria-hidden="true"></canvas>
+{% include navigation.html %}
+{{ content }}
+{% include footer.html %}
+<script src="{{ '/assets/ai-bg.js' | relative_url }}?v={{ site.asset_version }}"></script>
+</body>
+</html>

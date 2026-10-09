@@ -1,0 +1,27 @@
+html_lang:
+  zh: zh-CN
+  en: en
+logo_alt:
+  zh: 智能量子材料课题组标志
+  en: IQM Lab logo
+footer:
+  zh: © 智能量子材料课题组 · 人工智能赋能量子材料发现
+  en: © Intelligent Quantum Materials Lab (IQM Lab) · AI-enabled quantum materials discovery
+switch_language:
+  zh: EN
+  en: 中文
+news:
+  zh: 新闻动态
+  en: News
+all_news:
+  zh: 查看全部新闻动态
+  en: View all news
+featured:
+  zh: ★ 代表性论文
+  en: ★ Featured
+missing_pdf:
+  zh: PDF 待补充
+  en: PDF unavailable
+back_member:
+  zh: 返回成员页
+  en: Back to Member

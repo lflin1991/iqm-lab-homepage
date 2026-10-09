@@ -1,0 +1,14 @@
+{% assign item = include.item %}
+{% if include.compact %}
+<article class="news-item">
+  <div class="news-date">{{ item.label[page.lang] | default: item.date | escape }}</div>
+  <div class="news-title">{{ item.title[page.lang] | escape }}</div>
+  <div class="news-text">{{ item.summary[page.lang] | default: item.body[page.lang] | replace: 'SITE_EMAIL', site.email | markdownify }}</div>
+</article>
+{% else %}
+<article class="timeline-item" id="{{ item.id | escape }}">
+  <div class="news-date">{{ item.label[page.lang] | default: item.date | escape }}</div>
+  <h3>{{ item.title[page.lang] | escape }}</h3>
+  {{ item.body[page.lang] | replace: 'SITE_EMAIL', site.email | markdownify }}
+</article>
+{% endif %}

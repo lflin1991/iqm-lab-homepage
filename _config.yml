@@ -2,7 +2,12 @@ title: Intelligent Quantum Materials Lab (IQM Lab)
 subtitle: Condensed Matter Theory & Computational Materials
 email: lflin@utk.edu
 google_scholar: https://scholar.google.com/citations?user=bvLzblkAAAAJ
-url: "https://iqmlab.org"
-baseurl: ""
+url: https://iqmlab.org
+baseurl: ''
 sass:
-    style: compressed
+  style: compressed
+asset_version: 20260923navbg
+exclude:
+- README
+- Gemfile
+- Gemfile.lock

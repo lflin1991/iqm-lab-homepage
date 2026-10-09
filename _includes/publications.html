@@ -1,0 +1,17 @@
+{% for pub in site.data.publications %}
+    <article class="pub pub-card{% if pub.featured %} featured-pub{% endif %}">
+      <div class="pub-main">
+        <div class="pub-row">
+          <span class="pub-number">[{{ pub.number }}]</span>
+          <div class="pub-body">
+            <div class="pub-meta">{% if pub.featured %}<span class="badge star-badge">{{ site.data.i18n.featured[page.lang] }}</span>{% endif %}</div>
+            <div class="pub-citation">{{ pub.citation }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="pub-actions">
+        {% if pub.doi %}<a class="button secondary light-button" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+        {% if pub.pdf %}<a class="button pub-pdf" href="{{ site.baseurl }}/pdfs/{{ pub.pdf }}" target="_blank" rel="noopener">PDF</a>{% else %}<span class="missing-pdf">{{ site.data.i18n.missing_pdf[page.lang] }}</span>{% endif %}
+      </div>
+    </article>
+    {% endfor %}

@@ -1,0 +1,79 @@
+- id: lingfang-lin
+  name:
+    zh: 林玲芳 / Ling-Fang Lin
+    en: Ling-Fang Lin / 林玲芳
+  role:
+    zh: 课题组负责人
+    en: Principal Investigator
+  bio:
+    zh: 研究兴趣包括强关联电子材料、高温超导、磁性、多铁性、第一性原理计算与多体数值模拟。课题组致力于把可解释的物理机制、先进计算方法与 AI/ML 材料发现相结合，探索新型量子材料中的电子结构、磁电耦合和非常规超导机制。
+    en: Research interests include strongly correlated electronic materials, high-temperature superconductivity, magnetism, multiferroicity, first-principles calculations, and many-body numerical simulations. The group combines interpretable physical mechanisms, advanced computational methods, and AI/ML-driven materials discovery.
+  photo: /assets/images/portrait.webp
+  links:
+  - url:
+      zh: /lingfang-lin.html
+      en: /en/lingfang-lin.html
+    link_label:
+      zh: 查看详情
+      en: View profile
+- id: ming-an
+  name:
+    zh: 安明 / Ming An
+    en: Ming An / 安明
+  role:
+    zh: 课题组教师
+    en: Faculty Member
+  bio:
+    zh: 研究方向：凝聚态理论计算、低维物质中的量子新效应、铁磁铁电等多功能材料设计
+    en: Research interests include theoretical and computational condensed matter physics, novel quantum effects in low-dimensional systems, and the design of multifunctional materials with ferromagnetic and ferroelectric properties.
+  photo: /assets/images/anming.webp
+  links:
+  - url:
+      zh: http://physics.seu.edu.cn/2023/1116/c29635a472414/page.htm
+      en: http://physics.seu.edu.cn/2023/1116/c29635a472414/page.htm
+    link_label:
+      zh: 查看详情
+      en: View profile
+- id: huijie-lian
+  name:
+    zh: 连慧婕 / Hui-Jie Lian
+    en: Hui-Jie Lian / 连慧婕
+  role:
+    zh: 博士生
+    en: PhD Student
+  bio:
+    zh: 研究方向：凝聚态理论计算、低维磁性，拓扑，铁电材料
+    en: Research interests include theoretical and computational condensed matter physics, low-dimensional magnetism, topology, and ferroelectric materials.
+  photo: /assets/images/lianhuijie.webp
+  links:
+  - url:
+      zh: mailto:230259170@seu.edu.cn
+      en: mailto:230259170@seu.edu.cn
+    link_label:
+      zh: 邮箱
+      en: Email
+- id: huijie-lian
+  name:
+    zh: 连慧婕 / Hui-Jie Lian
+    en: Hui-Jie Lian / 连慧婕
+  role:
+    zh: 博士生
+    en: PhD Student
+  bio:
+    zh: 研究方向：凝聚态理论计算、低维磁性，拓扑，铁电材料
+    en: Research interests include theoretical and computational condensed matter physics, low-dimensional magnetism, topology, and ferroelectric materials.
+  photo: /assets/images/lianhuijie.webp
+  links:
+  - url:
+      zh: mailto:230259170@seu.edu.cn
+      en: mailto:230259170@seu.edu.cn
+    link_label:
+      zh: 邮箱
+      en: Email
+  links:
+  - url:
+      zh: https://jingyanchen730.github.io/jychen-homepage-new/
+      en: https://jingyanchen730.github.io/jychen-homepage-new/
+    link_label:
+      zh: 查看详情
+      en: Website

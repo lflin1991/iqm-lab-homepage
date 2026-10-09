@@ -6,8 +6,31 @@
   const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const ctx = canvas.getContext('2d', { alpha: true });
+  const topbar = document.querySelector('.topbar');
+  const navCanvas = topbar ? document.createElement('canvas') : null;
+  const navCtx = navCanvas ? navCanvas.getContext('2d') : null;
+  if (navCanvas) {
+    navCanvas.className = 'topbar-bg-canvas';
+    navCanvas.setAttribute('aria-hidden', 'true');
+    topbar.prepend(navCanvas);
+  }
   let w, h, dpr, particles, rafId, resizeTimer;
   let running = false;
+
+  function syncNav() {
+    if (!navCtx || !canvas.width || !canvas.height) return;
+    navCtx.clearRect(0, 0, navCanvas.width, navCanvas.height);
+    // Copy the same frame at the same scale; the nav canvas clips the rest.
+    navCtx.drawImage(canvas, 0, 0);
+  }
+
+  function resizeNav() {
+    if (!navCanvas) return;
+    const ratio = dpr || Math.min(window.devicePixelRatio || 1, 2);
+    navCanvas.width = Math.floor(navCanvas.clientWidth * ratio);
+    navCanvas.height = Math.floor(navCanvas.clientHeight * ratio);
+    syncNav();
+  }
 
   function buildGlowSprite(hue) {
     const size = 30, off = document.createElement('canvas');
@@ -29,6 +52,7 @@
     canvas.height = Math.floor(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     if (!particles) init();
+    resizeNav();
   }
 
   function init() {
@@ -88,16 +112,19 @@
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
     }
 
+    syncNav();
     if (running && !reduced) rafId = requestAnimationFrame(frame);
     else rafId = null;
   }
 
   function start() {
+    if (navCanvas) navCanvas.style.display = mqDisable.matches ? 'none' : '';
     if (mqDisable.matches) { canvas.style.display = 'none'; stop(); return; }
     canvas.style.display = '';
+    stop();
     resize();
-    if (!running) { running = true; rafId = requestAnimationFrame(frame); }
-    if (mqReduced.matches && !rafId) frame(0); // draw one static frame
+    running = true;
+    rafId = requestAnimationFrame(frame);
   }
 
   function stop() {
@@ -108,10 +135,15 @@
 
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resize, 120);
+    resizeTimer = setTimeout(() => {
+      if (mqDisable.matches) return;
+      resize();
+      if (mqReduced.matches) frame(0);
+    }, 120);
   }, { passive: true });
 
   mqDisable.addEventListener('change', start);
+  if (topbar) new ResizeObserver(resizeNav).observe(topbar);
   mqReduced.addEventListener('change', start);
   document.addEventListener('visibilitychange', () => {
     document.hidden ? stop() : start();
